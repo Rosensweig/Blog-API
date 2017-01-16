@@ -1,0 +1,32 @@
+{
+  "name": "blog-api",
+  "version": "1.0.0",
+  "description": "Blog API Challenge for Thinkful's server-side development course, project 1.4.7",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+    "dependencies": {
+      "body-parser": "^1.15.2",
+      "express": "^4.12.4",
+      "morgan": "^1.7.0"
+  },
+  "engines": {
+    "node": "4.4.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rosensweig/Blog-API.git"
+  },
+  "keywords": [
+    "blog",
+    "API",
+    "Thinkful"
+  ],
+  "author": "Daniel Rosensweig",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rosensweig/Blog-API/issues"
+  },
+  "homepage": "https://github.com/Rosensweig/Blog-API#readme"
+}
