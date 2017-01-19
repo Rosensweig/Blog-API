@@ -65,6 +65,38 @@ app.delete('/:id', (req, res) => {
 	res.status(204).end();
 });
 
-app.listen(process.env.PORT || 8080, () => {
-	console.log(`Your app is listening on port ${process.env.PORT || 8080}`);
-});
+
+// Functions and exports to run and close the server from test files
+const server;
+
+function runServer() {
+	const port = process.env.PORT || 8080;
+	return new Promise((resolve, reject) => {
+		server = app.listen(port, () => {
+			console.log(`Your app is listening on port ${process.env.PORT || 8080}`);
+			resolve(server);
+		}).on('error', err => {
+			reject(err);
+		});
+	});
+}
+
+function closeServer() {
+	return new Promise((resolve, reject) => {
+		console.log("Closing server.");
+		server.close(err => {
+			if (err) {
+				reject(err);
+				return;
+			}
+			resolve();
+		});
+	});
+}
+
+
+if (require.main === module) {
+  runServer().catch(err => console.error(err));
+};
+
+module.exports = {app, runServer, closeServer};
