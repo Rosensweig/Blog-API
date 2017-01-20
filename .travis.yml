@@ -2,6 +2,7 @@ language: node_js
 node_js: node
 deploy:
   provider: heroku
+  app: polar-coast-95285
 on:
   repo: Rosensweig/Blog-API
   branch: master
