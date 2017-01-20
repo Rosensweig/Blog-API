@@ -67,7 +67,7 @@ app.delete('/:id', (req, res) => {
 
 
 // Functions and exports to run and close the server from test files
-const server;
+let server;
 
 function runServer() {
 	const port = process.env.PORT || 8080;
