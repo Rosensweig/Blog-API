@@ -36,7 +36,6 @@ describe('Blog', function() {
 			"title": "Posted Entry", 
 			"author": "Daniel", 
 			"content": "This entry added using POST function.",
-			"publishDate": Date.now()
 		};
 		return chai.request(app)
 		.post('/')
@@ -48,7 +47,7 @@ describe('Blog', function() {
 			const expectedKeys = ['id', 'title', 'author', 'content', 'publishDate'];
 			res.body.should.include.keys(expectedKeys);
 			res.body.id.should.not.be.null;
-			res.body.should.deep.equal(Object.assign(newPost, {id: res.body.id}));
+			res.body.should.deep.equal(Object.assign(newPost, {id: res.body.id, publishDate: res.body.publishDate}));
 		});
 	});
 
@@ -71,7 +70,7 @@ describe('Blog', function() {
 			res.should.have.status(200);
 			res.should.be.json;
 			res.body.should.be.a('object');
-			res.body.should.deep.equal(updatePost);
+			res.body.should.deep.equal(Object.assign(updatePost, {publishDate: res.body.publishDate}));
 		});
 	});
 

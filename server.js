@@ -53,10 +53,10 @@ app.put('/:id', jsonParser, (req, res) => {
 		content: req.body.content,
 		author: req.body.author,
 		id: req.params.id,
-		date: req.body.date || Date.now()
+		publishDate: req.body.date || Date.now()
 	});
 	console.log(`Updated entry '${req.body.title}' on blog.`);
-	res.status(204).json(updatedEntry);
+	res.status(200).json(updatedEntry);
 });
 
 app.delete('/:id', (req, res) => {
