@@ -2,7 +2,11 @@ language: node_js
 node_js: node
 deploy:
   provider: heroku
+  api_key:
+    secure: q2vjfV6dItyxTx4y8V2NZZxEDEJNuDGLIn/LNv7kbnyk/lvvAMgpCM3JSmipxBSjbj4yMvWFaCcFhGuOdS2WjFRB0auUmzD9KqFLp3DbhxwBV/6uIFaPt6m1HCfDlGVYkz30Ov/Kq09ydpmuwTbv56szN/E5FRq//z0VPD00ofh0mYcuVH1ljFFCuBGiUv6tpvimEmzXvGDgJVccng/gt+2xuOvXrvOTLx8yiHLQ/lwJlIrhdfdfCY6VWdVT/S/WHxduFbIKRHVwrd+/Do5+lMgHaH5/pFCnqpqbdHnlP2CJmNWba5vcToed2yCZBEtU7ZYZsJ9nhIxyIedIUShcAvf01m0M5tCmy1axLqZXIeCYyE3KAVx/TbWTw5B1w+kpOYFMS9Y4NcW4frGG4Zey+1iSxMoVrZKyAviWT6b+JYxLGkVoftQ8Iw6TueNKiC28nqaqQWi890qkcm1WcqqREg8JA2GYAVTHcjGhJlMcOqIZTZqb9tAqCM6Vx/P74jAvlLRuATqsDRse7m2HmNDLn3zdar90geP/oEEoTxBNjn/a+17LmDrhFqXYkILj7vc27UcjkzxFE582MyHQ0hOyukSjRPlF9p0cE568iFEOfCDCIaP9+KJI/FFIz5GBEv5aXpr2R2yYotXmdE+8ZcvWB9uMUWSP1I0kjqb9FIXUhcA=
   app: polar-coast-95285
-on:
+  on:
+    repo: Rosensweig/Blog-API
+true:
   repo: Rosensweig/Blog-API
   branch: master
